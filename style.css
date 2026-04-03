@@ -392,21 +392,16 @@ a {
   margin-top: 34px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-  align-items: start;
+  gap: 26px;
+  align-items: stretch;
 }
 
-.testimonial-card,
-.testimonial-video {
+/* Cards */
+.testimonial-card {
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 20px;
-  overflow: hidden;
-}
-
-.testimonial-card {
   padding: 28px;
-  min-height: 280px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -423,23 +418,35 @@ a {
   font-weight: 600;
 }
 
+/* VIDEO FIX (THIS IS THE KEY) */
 .testimonial-video {
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 18px;
 }
 
+/* vertical video container */
 .testimonial-video iframe {
   width: 100%;
-  max-width: 320px;
-  height: 570px;
+  max-width: 260px;   /* keeps it clean */
+  aspect-ratio: 9 / 16; /* PERFECT for shorts */
+  border-radius: 16px;
   border: none;
-  border-radius: 20px;
-  display: block;
-  background: #000;
+  background: black;
 }
 
+/* Mobile */
+@media (max-width: 768px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-video iframe {
+    max-width: 100%;
+  }
+}
 /* Responsive */
 @media (max-width: 768px) {
   .testimonial-grid {
