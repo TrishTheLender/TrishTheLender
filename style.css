@@ -430,11 +430,8 @@ a {
 /* vertical video container */
 .testimonial-video iframe {
   width: 100%;
-  max-width: 260px;   /* keeps it clean */
-  aspect-ratio: 9 / 16; /* PERFECT for shorts */
-  border-radius: 16px;
-  border: none;
-  background: black;
+  max-width: 320px;
+  height: 570px;
 }
 
 /* Mobile */
